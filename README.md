@@ -1,5 +1,7 @@
 # system-design-basics
 
+The whole note has been taken from this video: https://www.youtube.com/watch?v=MbjObHmDbZo
+
 ## Introduction
 
 First rule is "whenever possible avoid using distributed system. Use it only when it is necesarry." What is a distributed system? Basicaly it is a group of computers working together and the goal is to hide the complexity from the user, so the user thinks he is interacting with a single computer.
