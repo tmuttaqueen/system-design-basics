@@ -75,8 +75,11 @@ ex. (23h/24h)*100 = 95.83%
   3. Difficulty in deploying updates.
   4. Want to abstract away the infrustracture so that the product engineers don't have to worry about it.
 
+## Some Important Numbers
 
+### Latency numbers
 
+![latency number](latency_number.png)
 
 
 
