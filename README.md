@@ -78,9 +78,7 @@ ex. (23h/24h)*100 = 95.83%
 ## Some Important Numbers
 
 ### Latency numbers
-
-![latency number](latency_number.png)
-
+<img src="latency_number.png" alt="drawing" style="height:400px;"/>
 
 
 
