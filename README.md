@@ -78,11 +78,37 @@ ex. (23h/24h)*100 = 95.83%
 ## Some Important Numbers
 
 ### Latency numbers
-<img src="latency_number.png" alt="drawing" style="height:400px;"/>
+<img src="latency_number.png" alt="drawing" style="height:350px;"/>
 
+### Traffic estimates
 
+#### Requests
+avarage read requests = (average_daily_user * average_read_per_user)/86400 requests/sec \
+avarage write requests = (average_daily_user * average_write_per_user)/86400 requests/sec 
 
+ex. avarage read requests = (35000 x 10)/86400 ~ 4 requests/sec \
+avarage write requests = (35000 x 2)/86400 ~ 1 requests/sec
 
+#### Memory of cache server ( ram )
+A general rule of thumb is that some of the data will get more attention ( thus will be cached ) and some of the data won't get any attention. On average 20%
+of the read read requests data will be cached. Here request size only contains the data from database (ie. text data mainly) \
+So, cache memory = read_requests_per_day * average_requests_size * 0.2 
+
+ex. cache memory = 35000 x 10 x 10 KB x 0.2 = 700 MB ~ 1 GB
+
+#### Bandwidth requirements
+Here request size also contains the size of static files like photos from S3, files from CDN etc. 
+bandwidth needed = (requests_per_day * request_size_in_MB )/86400  MB/sec 
+
+ex. bandwidth needed = (35000 x 12  x 1.5 MB)/86400 ~ 7 MB/sec
+
+This bandwidth estimation is the average bandwidth. Rule of thumb is that, at peak times bandwidth needs will be 3 times the average.
+
+#### Storage requirements
+Here request size contains the size of files and text data.
+storage needed = write_request_per_day * request_size * life_expectancy_of_data
+
+ex. storage needed = 35000 x 2 x 1.5 MB x (10x365) ~ 400000000 MB ~ 400 TB
 
 
 
