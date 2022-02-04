@@ -111,6 +111,16 @@ storage needed = write_request_per_day * request_size * life_expectancy_of_data
 ex. storage needed = 35000 x 2 x 1.5 MB x (10x365) ~ 400000000 MB ~ 400 TB
 
 
-
-
+### Scaling
+#### Vertical scaling
+This means increasing system hardware like ram, cpu cores or storage.
+  1. Easiest way to scale.
+  2. Diminishing returns, limits to scalibility.
+  3. Single point of failure.
+  
+#### Horizontal scaling
+  1. More complexity upfront, but more efficient long term.
+  2. Redundancy built in.
+  3. Need load balancer to distribute traffic.
+  4. Cloud providers make this easier.
 
