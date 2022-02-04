@@ -133,22 +133,23 @@ Basically rule of thumb is that intial cost with vertical scaling is lower than 
   3. Used to improve reliability and scalibity of the software.
   4. Common LB's are: Software based: Nginx, HAProxy Hardware based: F5, Citrix.
 
-LB routing methods:
+**LB routing methods:**
   1. Round Robin: uneven load because not all requests are same.
   2. Least Connection: Routes based on the number of client connected to the server.
   3. Least response time:
   4. IP Hash: usefull for stateful session.
 
-Layer 4 LB:
+**Layer 4 LB:**
   1. Only has access to TCP and UDP data. 
   2. Faster.
   3. Lack of Information can lead to uneven traffic.
 
-Layer 7 LB:
+**Layer 7 LB:**
   1. Full access to HTTP protocol and data.
   2. SSL termination.
   3. Check for authentication.
   4. Smarter routing options.
 
-A production LB setup:
+**A production LB setup:**
+
 <img src="production_lb_setup.png" alt="drawing" style="height:350px;"/>
