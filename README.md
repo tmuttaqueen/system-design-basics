@@ -126,3 +126,5 @@ This means increasing system hardware like ram, cpu cores or storage.
 
 Basically rule of thumb is that intial cost with vertical scaling is lower than horizontal scaling but for higher demand than this, cost with horizontal scaling is way lower than vertical scaling. Also there is saturation point with vertical scaling. 
 
+## System Design Components
+### Load balancers
