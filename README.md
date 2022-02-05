@@ -97,7 +97,7 @@ So, cache memory = read_requests_per_day * average_requests_size * 0.2
 ex. cache memory = 35000 x 10 x 10 KB x 0.2 = 700 MB ~ 1 GB
 
 #### Bandwidth requirements
-Here request size also contains the size of static files like photos from S3, files from CDN etc. 
+Here request size also contains the size of static files like photos from S3, files from CDN etc. \
 bandwidth needed = (requests_per_day * request_size_in_MB )/86400  MB/sec 
 
 ex. bandwidth needed = (35000 x 12  x 1.5 MB)/86400 ~ 7 MB/sec
@@ -153,3 +153,22 @@ Basically rule of thumb is that intial cost with vertical scaling is lower than 
 **A production LB setup:**
 
 <img src="production_lb_setup.png" alt="drawing" style="height:350px;"/>
+
+### Cache
+it is a in-memory system. Most accessed data are normally cached. Suppose, your application is a food delivery system. Currently you have 1000 riders. So each time a rider query something about his daily target, direct database query can handle it. But If you want to scale it to 10000 riders, you can easily do it with caching, without any extra cost. Caching layers can be in front of many components, ex:
+  1. DNS
+  2. CDN
+  3. Application
+  4. Database
+
+#### Distributed cache:
+  1. Work same as traditional cache.
+  2. Has builtin functionality to replicate data, shard data accross servers, and locate appropriate server for each key.
+  3. Replication is done in similar active-passive system like LB.
+
+#### Cache eviction
+  1. Preventing stale data.
+  2. Caching only the most valueable data.
+ 
+
+
