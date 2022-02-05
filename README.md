@@ -169,6 +169,18 @@ it is a in-memory system. Most accessed data are normally cached. Suppose, your 
 #### Cache eviction
   1. Preventing stale data.
   2. Caching only the most valueable data.
- 
 
+#### Cache eviction policy
+  1. TTL ( Time to live ): Set a time period before a cache entry is deleted. Used to prevent stale data.
+  2. LRU ( Least recently used ): Once cache is full remove the last ( not recent ) accessed key and add new key. It has to do with keeping the most valueable items.
+  3. LFU ( Least frequently used ): Track number of time a key is accessed. Drop least used when cache is full. It has to do with keeping the most valueable items.
 
+#### Caching strategies
+  1. Cache Aside: most common.
+  2. Read Through.
+  3. Write Through.
+  4. Write Back
+
+#### Cache consistency
+  1. How to maintain consistency between cache and database efficiently.
+  2. Importance depends on use case.
